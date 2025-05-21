@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZIBANAMA AR Viewer</title>
+  <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ar.js@3.3.2/aframe/build/aframe-ar.min.js"></script>
+  <style>
+    body { margin: 0; font-family: sans-serif; background: #f9f9f9; text-align: center; }
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 2;
+      width: 120px;
+    }
+  </style>
+</head>
+<body>
+  <img src="logo.png" alt="Zibanama Logo" class="logo">
+  <a-scene embedded arjs>
+    <a-assets>
+      <img id="floorTexture" src="parquet.jpg">
+    </a-assets>
+
+    <a-plane
+      src="#floorTexture"
+      rotation="-90 0 0"
+      width="2"
+      height="2"
+      position="0 0 0"
+      material="repeat: 4 4">
+    </a-plane>
+
+    <a-entity camera></a-entity>
+  </a-scene>
+</body>
+</html>
